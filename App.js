@@ -24,6 +24,8 @@ export default function App() {
         >
           <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home', headerShown: false }} />
 
+          {/* Register one route per app; all of them render DetailScreen with that app's
+              title, icon and message passed as initialParams. */}
           {APPS.map((app) => (
             <Stack.Screen
               key={app.id}

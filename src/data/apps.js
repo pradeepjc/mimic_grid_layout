@@ -10,7 +10,7 @@ export const APPS = [
     id: 'camera',
     title: 'Camera',
     screen: 'CameraScreen',
-    icon: 'camera',
+    icon: 'camera', // drawn in code by AppIcon, not an image asset
     message: 'Welcome to the camera app',
   },
   {
@@ -31,7 +31,7 @@ export const APPS = [
     id: 'photos',
     title: 'Photos',
     screen: 'PhotosScreen',
-    icon: 'photos',
+    icon: 'photos', // drawn in code by AppIcon, not an image asset
     message: 'Welcome to the Photos Screen',
   },
 ];

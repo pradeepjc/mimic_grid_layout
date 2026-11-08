@@ -13,6 +13,8 @@ export default function HomeScreen({ navigation }) {
   const { width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
 
+  // Cap the grid width on tablets/landscape, center it with the leftover space,
+  // then split the remaining width into columns minus the gaps between them.
   const contentWidth = Math.min(width, MAX_CONTENT_WIDTH) - PADDING * 2;
   const sidePadding = (width - contentWidth) / 2;
   const tileWidth = (contentWidth - GAP * (COLUMNS - 1)) / COLUMNS;

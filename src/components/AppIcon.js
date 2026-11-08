@@ -1,5 +1,8 @@
 import { Image, StyleSheet, View } from 'react-native';
 
+// `icon` is either a require()'d image, or the string 'camera' / 'photos'.
+// Those two have no PNG asset, so they are drawn with Views below.
+// `radius` approximates the iOS app-icon corner rounding.
 export default function AppIcon({ icon, size = 56 }) {
   const radius = size * 0.225;
 
@@ -15,6 +18,7 @@ export default function AppIcon({ icon, size = 56 }) {
   );
 }
 
+// All dimensions are fractions of `size` so the icon scales.
 function CameraIcon({ size, radius }) {
   const bodyW = size * 0.72;
   const bodyH = size * 0.5;
@@ -87,6 +91,8 @@ function PhotosIcon({ size, radius }) {
             borderRadius: petalW / 2,
             backgroundColor: color,
             opacity: 0.85,
+            // Rotate first, then move along the rotated axis, so each petal points outward from the center.
+            // Swapping the order would stack all petals in the same spot.
             transform: [{ rotate: `${i * 45}deg` }, { translateY: -petalH / 2 }],
           }}
         />

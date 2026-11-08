@@ -5,6 +5,7 @@ import AppIcon from '../components/AppIcon';
 export default function DetailScreen({ navigation, route }) {
   const { title, message, icon } = route.params ?? {};
 
+  // Title is also set in App.js; this mainly sets the iOS back-button label to "Home".
   useLayoutEffect(() => {
     navigation.setOptions({ title, headerBackTitle: 'Home' });
   }, [navigation, title]);
